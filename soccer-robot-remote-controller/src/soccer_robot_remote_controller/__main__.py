@@ -1,4 +1,6 @@
 from soccer_robot_remote_controller.app import main
+from .btconn import BTConn
 
 if __name__ == "__main__":
-    main().main_loop()
+    btconn = BTConn()
+    main(btconn).main_loop()
