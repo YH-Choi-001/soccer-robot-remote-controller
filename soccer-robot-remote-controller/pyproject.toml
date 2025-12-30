@@ -21,7 +21,9 @@ test_sources = [
 ]
 
 requires = [
+    "bleak",
 ]
+
 test_requires = [
     "pytest",
 ]
@@ -185,6 +187,14 @@ build_gradle_dependencies = [
     # Needed for MapView
     # "org.osmdroid:osmdroid-android:6.1.20",
 ]
+
+manifest_extra = """
+<uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+"""
 
 # Web deployments
 [tool.briefcase.app.soccer-robot-remote-controller.web]
